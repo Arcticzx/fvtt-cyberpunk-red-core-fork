@@ -2,10 +2,10 @@ _id: VbMY2fs3im1sP2dJ
 _key: "!items!VbMY2fs3im1sP2dJ"
 effects:
   - _id: hl1PHc6f7gRFz2gx
-    _key: "!items.effects!VbMY2fs3im1sP2dJ.hl1PHc6f7gRFz2gx"
+    _key: '!items.effects!VbMY2fs3im1sP2dJ.hl1PHc6f7gRFz2gx'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: null
       duplicateSource: null
       exportSource: null
@@ -13,12 +13,7 @@ effects:
       modifiedTime: 1794551120496
       systemId: null
       systemVersion: null
-    changes:
-      - key: bonuses.wardrobeAndStyle
-        mode: 2
-        priority: null
-        value: "2"
-    description: ""
+    description: ''
     disabled: true
     duration:
       combat: null
@@ -32,9 +27,9 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": skill
+            '0': skill
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
     img: systems/cyberpunk-red-core/icons/compendium/cyberware/light_tattoo.svg
@@ -42,8 +37,14 @@ effects:
     origin: null
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: bonuses.wardrobeAndStyle
+          phase: initial
+          priority: null
+          type: add
+          value: '2'
+    tint: '#ffffff'
     transfer: true
     type: base
 flags:

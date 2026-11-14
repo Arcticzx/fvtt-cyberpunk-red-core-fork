@@ -2,10 +2,10 @@ _id: vysFvuTpuG2aDDIz
 _key: "!items!vysFvuTpuG2aDDIz"
 effects:
   - _id: nQeh4cCSn7qDzjYj
-    _key: "!items.effects!vysFvuTpuG2aDDIz.nQeh4cCSn7qDzjYj"
+    _key: '!items.effects!vysFvuTpuG2aDDIz.nQeh4cCSn7qDzjYj'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: null
       duplicateSource: null
       exportSource: null
@@ -13,16 +13,7 @@ effects:
       modifiedTime: null
       systemId: null
       systemVersion: null
-    changes:
-      - key: bonuses.ranged
-        mode: 2
-        priority: null
-        value: "-4"
-      - key: bonuses.perceptionSight
-        mode: 2
-        priority: null
-        value: "-4"
-    description: ""
+    description: ''
     disabled: false
     duration:
       combat: null
@@ -36,13 +27,13 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": combat
-            "1": skill
+            '0': combat
+            '1': skill
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
-            "1":
+            '1':
               isSituational: true
               onByDefault: true
     img: systems/cyberpunk-red-core/icons/compendium/critical_injuries/lost_eye.svg
@@ -50,8 +41,19 @@ effects:
     origin: null
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: bonuses.ranged
+          phase: initial
+          priority: null
+          type: add
+          value: '-4'
+        - key: bonuses.perceptionSight
+          phase: initial
+          priority: null
+          type: add
+          value: '-4'
+    tint: '#ffffff'
     transfer: true
     type: base
 flags:

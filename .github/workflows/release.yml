@@ -1,0 +1,54 @@
+name: Build and Release Foundry System
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag (for example v0.93.0-v14.1)"
+        required: true
+        default: "v0.93.0-v14.1"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit tests
+        run: npm run test:unit
+
+      - name: Build system and package release
+        env:
+          TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+        run: node tools/github-release.mjs "$TAG"
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" release/system.json release/cyberpunk-red-core.zip --clobber
+          else
+            gh release create "$TAG" \
+              release/system.json \
+              release/cyberpunk-red-core.zip \
+              --title "Cyberpunk RED - CORE $TAG (Foundry v14)" \
+              --notes "Foundry VTT v14 build from branch dev with v14 compatibility patches."
+          fi

@@ -2,10 +2,10 @@ _id: CyYpPh89G7IYyryM
 _key: "!items!CyYpPh89G7IYyryM"
 effects:
   - _id: maW3KSp6yjC85oUn
-    _key: "!items.effects!CyYpPh89G7IYyryM.maW3KSp6yjC85oUn"
+    _key: '!items.effects!CyYpPh89G7IYyryM.maW3KSp6yjC85oUn'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: null
       duplicateSource: null
       exportSource: null
@@ -13,12 +13,7 @@ effects:
       modifiedTime: null
       systemId: null
       systemVersion: null
-    changes:
-      - key: system.stats.ref.value
-        mode: 2
-        priority: null
-        value: "1"
-    description: ""
+    description: ''
     disabled: true
     duration:
       combat: null
@@ -32,9 +27,9 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": stat
+            '0': stat
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
     img: systems/cyberpunk-red-core/icons/compendium/status/synthcoke.svg
@@ -42,15 +37,21 @@ effects:
     origin: null
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: system.stats.ref.value
+          phase: initial
+          priority: null
+          type: add
+          value: '1'
+    tint: '#ffffff'
     transfer: true
     type: base
   - _id: 9fYAbvg99knLYj9T
-    _key: "!items.effects!CyYpPh89G7IYyryM.9fYAbvg99knLYj9T"
+    _key: '!items.effects!CyYpPh89G7IYyryM.9fYAbvg99knLYj9T'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: null
       duplicateSource: null
       exportSource: null
@@ -58,12 +59,7 @@ effects:
       modifiedTime: null
       systemId: null
       systemVersion: null
-    changes:
-      - key: system.stats.ref.value
-        mode: 2
-        priority: null
-        value: "-2"
-    description: ""
+    description: ''
     disabled: true
     duration:
       combat: null
@@ -77,9 +73,9 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": stat
+            '0': stat
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
     img: systems/cyberpunk-red-core/icons/compendium/status/synthcoke_addiciton.svg
@@ -87,15 +83,21 @@ effects:
     origin: null
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: system.stats.ref.value
+          phase: initial
+          priority: null
+          type: add
+          value: '-2'
+    tint: '#ffffff'
     transfer: true
     type: base
   - _id: rw9YMhZaP2AQcYJw
-    _key: "!items.effects!CyYpPh89G7IYyryM.rw9YMhZaP2AQcYJw"
+    _key: '!items.effects!CyYpPh89G7IYyryM.rw9YMhZaP2AQcYJw'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: null
       duplicateSource: null
       exportSource: null
@@ -103,12 +105,7 @@ effects:
       modifiedTime: null
       systemId: null
       systemVersion: null
-    changes:
-      - key: system.stats.ref.value
-        mode: 2
-        priority: null
-        value: "3"
-    description: ""
+    description: ''
     disabled: true
     duration:
       combat: null
@@ -122,9 +119,9 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": stat
+            '0': stat
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
     img: systems/cyberpunk-red-core/icons/compendium/status/synthcoke_addiciton.svg
@@ -132,8 +129,14 @@ effects:
     origin: null
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: system.stats.ref.value
+          phase: initial
+          priority: null
+          type: add
+          value: '3'
+    tint: '#ffffff'
     transfer: true
     type: base
 flags:

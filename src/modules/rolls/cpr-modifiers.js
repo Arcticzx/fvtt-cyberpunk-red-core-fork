@@ -1,6 +1,34 @@
 import CPR from "../system/config.js";
 import SystemUtils from "../utils/cpr-systemUtils.js";
 
+/**
+ * Read the changes array from an ActiveEffect, preferring Foundry v14's
+ * `system.changes` and falling back to legacy or mocked `effect.changes`.
+ *
+ * @param {ActiveEffect|object} effect - ActiveEffect or plain mock object
+ * @returns {Array<object>}
+ */
+export function getEffectChanges(effect) {
+  if (Array.isArray(effect?.system?.changes)) {
+    return effect.system.changes;
+  }
+  if (Array.isArray(effect?.changes)) {
+    return effect.changes;
+  }
+  return [];
+}
+
+/**
+ * Determine whether an ActiveEffect is suppressed, supporting both the v14
+ * `effect.isSuppressed` accessor and `effect.system.isSuppressed`.
+ *
+ * @param {ActiveEffect|object} effect - ActiveEffect or simplified view object
+ * @returns {boolean}
+ */
+export function isEffectSuppressed(effect) {
+  return Boolean(effect?.isSuppressed ?? effect?.system?.isSuppressed);
+}
+
 export default class CPRMod {
   /**
    *
@@ -9,7 +37,7 @@ export default class CPRMod {
    * @constructor
    */
   constructor(effect, change) {
-    const index = effect.changes.indexOf(change); // Index of change on the effect.
+    const index = getEffectChanges(effect).indexOf(change); // Index of change on the effect.
     // Effects created while Foundry's generic sheet was active may have changes
     // without CPR's parallel category/situational flags. Treat those changes as
     // custom so the CPR sheet can render and the user can repair them.
@@ -25,7 +53,9 @@ export default class CPRMod {
     this.source = effect.name;
     this.value = Number.parseInt(change.value, 10);
     this.key = change.key;
-    this.changeMode = change.mode; // Right now, only ADD (const = 2) is supported. Change modes come from Foundry)
+    // Prefer v14 string `type` ("add", "override", ...) and fall back to legacy numeric `mode`.
+    this.changeMode = change.type ?? change.mode;
+    this.phase = change.phase ?? "initial";
   }
 
   /**
@@ -39,8 +69,8 @@ export default class CPRMod {
     const allModifiers = [];
     effects.forEach((effect) => {
       // Ignore suppressed/disabled effects, unless getDisabled = true. In that case, get all.
-      if ((!effect.system.isSuppressed && !effect.disabled) || getDisabled) {
-        effect.changes.forEach((change, index) => {
+      if ((!isEffectSuppressed(effect) && !effect.disabled) || getDisabled) {
+        getEffectChanges(effect).forEach((change, index) => {
           const mod = new CPRMod(effect, change, index);
           allModifiers.push(mod);
         });

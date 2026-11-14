@@ -10,6 +10,7 @@
   "scripts": {
     "api-docs": "npx jsdoc -c jsdoc.json",
     "build": "npx gulp build",
+    "release:github": "node tools/github-release.mjs",
     "extractPacks": "npx gulp extractPacks",
     "generateBabele": "npx gulp generateBabele",
     "installPackages": "npm i",

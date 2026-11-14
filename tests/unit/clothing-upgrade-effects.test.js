@@ -17,7 +17,6 @@ beforeEach(() => {
     "clothing",
     "gear",
   ]);
-  vi.stubGlobal("CONST", { ACTIVE_EFFECT_MODES: { ADD: 2 } });
   vi.stubGlobal("foundry", {
     utils: { ...foundry.utils, randomID: () => "ClothingEffect01" },
   });
@@ -42,9 +41,21 @@ describe("clothing upgrade migration", () => {
     await new ClothingUpgradeEffects().updateItem(data);
 
     expect(data.effects[0]).toEqual(existing);
-    expect(data.effects[1].changes).toEqual([
-      { key: "system.stats.cool.value", mode: 2, value: "2" },
-      { key: "bonuses.wardrobeAndStyle", mode: 2, value: "-3" },
+    expect(data.effects[1].system.changes).toEqual([
+      {
+        key: "system.stats.cool.value",
+        type: "add",
+        phase: "initial",
+        priority: null,
+        value: "2",
+      },
+      {
+        key: "bonuses.wardrobeAndStyle",
+        type: "add",
+        phase: "initial",
+        priority: null,
+        value: "-3",
+      },
     ]);
     expect(data.effects[1]).toMatchObject({ transfer: true, disabled: false });
     expect(data.effects[1].flags[systemId].changes).toEqual({
@@ -62,11 +73,11 @@ describe("clothing upgrade migration", () => {
     });
     await new ClothingUpgradeEffects().updateItem(data);
     expect(data.effects).toHaveLength(2);
-    data.effects[1].changes[0].value = "5";
+    data.effects[1].system.changes[0].value = "5";
     data.system.modifiers = structuredClone(legacy);
     await new ClothingUpgradeEffects().updateItem(data);
     expect(data.effects).toHaveLength(2);
-    expect(data.effects[1].changes[0].value).toBe("5");
+    expect(data.effects[1].system.changes[0].value).toBe("5");
   });
 
   it.each([0, null, -2])("preserves a saved value of %s", async (value) => {
@@ -74,7 +85,8 @@ describe("clothing upgrade migration", () => {
     await new ClothingUpgradeEffects().updateItem(data);
     expect(data.flags[systemId].legacyClothingModifiers.cool.value).toBe(value);
     expect(data.effects).toHaveLength(value ? 1 : 0);
-    if (value) expect(data.effects[0].changes[0].value).toBe(String(value));
+    if (value)
+      expect(data.effects[0].system.changes[0].value).toBe(String(value));
   });
 
   it("leaves other upgrades and unconfigured clothing alone", async () => {
@@ -100,7 +112,9 @@ describe("clothing upgrade migration", () => {
       flags: { [systemId]: { cprInstallTree: [parent] } },
     };
     await new ClothingUpgradeEffects().updateItem(root);
-    expect(child.effects[0].changes[0].key).toBe("bonuses.wardrobeAndStyle");
+    expect(child.effects[0].system.changes[0].key).toBe(
+      "bonuses.wardrobeAndStyle",
+    );
     expect(child.system.modifiers).toEqual({});
     await new ClothingUpgradeEffects().updateItem(root);
     expect(child.effects).toHaveLength(1);

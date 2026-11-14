@@ -46,34 +46,55 @@ export default class CPRActiveEffect extends ActiveEffect {
   }
 
   /**
-   * Check if this effect is suppressed before applying it. Taken from the 5E code in
-   * active-effect.js.
+   * Determine whether this ActiveEffect is suppressed by core state (e.g., expired
+   * status) or CPR item rules (e.g., unequipped, uninstalled, or unrezzed parent).
    *
    * @override
-   * @param {CPRActor} actor - who's getting the active effect?
-   * @param {Object} change - the change to apply from an effect
-   * @returns null if this is suppressed, apply() otherwise
+   * @returns {boolean}
    */
-  apply(actor, change) {
-    if (this.system.isSuppressed) return null;
-    return super.apply(actor, change);
+  get isSuppressed() {
+    if (super.isSuppressed) return true;
+    if (this.disabled) return false;
+    const doc = this.parent;
+    if (!doc || doc instanceof CPRActor) return false; // we never suppress actor effects
+    return Boolean(doc.areEffectsSuppressed?.());
   }
 
   /**
-   * Determine if this effect is suppressed because of some game mechanic, like the item is not equipped.
-   * This was mostly copied from the dnd5e module in active-effect.js.
+   * Keep `system.isSuppressed` aligned with `this.isSuppressed` after DataModel
+   * initialization so sheets and legacy callers can inspect either property.
    *
-   * Warning: If errors are thrown in this method, they'll show up early on loading Foundry,
-   * and break basic functionality, for example, in actor.getData.
+   * @override
+   */
+  prepareDerivedData() {
+    super.prepareDerivedData();
+    this.determineSuppression();
+  }
+
+  /**
+   * Check if this effect change should apply during the current phase.
+   * Suppressed effects are skipped before delegating to core phase checks.
    *
-   * @returns nothing, it only sets the isSuppressed property (it's a mutator)
+   * @override
+   * @param {ActiveEffectChangeData} change - the change being considered
+   * @param {object} [options] - phase and replacementData options from Foundry
+   * @returns {boolean}
+   */
+  shouldApplyChange(change, options) {
+    if (this.isSuppressed) return false;
+    return super.shouldApplyChange(change, options);
+  }
+
+  /**
+   * Compute and mirror suppression onto `this.system.isSuppressed` (if extensible).
+   *
+   * @returns {boolean} whether this ActiveEffect is currently suppressed
    */
   determineSuppression() {
-    this.system.isSuppressed = false;
-    if (this.disabled) return;
-    const doc = this.parent;
-    if (!doc) return; // happens on item delete
-    if (doc instanceof CPRActor) return; // we never suppress actor effects
-    this.system.isSuppressed = doc.areEffectsSuppressed();
+    const suppressed = this.isSuppressed;
+    if (this.system && Object.isExtensible(this.system)) {
+      this.system.isSuppressed = suppressed;
+    }
+    return suppressed;
   }
 }

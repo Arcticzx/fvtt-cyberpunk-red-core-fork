@@ -2,10 +2,10 @@ _id: uApwuxpuIJMe47Vn
 _key: "!items!uApwuxpuIJMe47Vn"
 effects:
   - _id: CMDlHoVTmNq5MRwZ
-    _key: "!items.effects!uApwuxpuIJMe47Vn.CMDlHoVTmNq5MRwZ"
+    _key: '!items.effects!uApwuxpuIJMe47Vn.CMDlHoVTmNq5MRwZ'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: null
       duplicateSource: null
       exportSource: null
@@ -13,16 +13,7 @@ effects:
       modifiedTime: null
       systemId: null
       systemVersion: null
-    changes:
-      - key: bonuses.aimedShot
-        mode: 2
-        priority: null
-        value: "1"
-      - key: bonuses.singleShot
-        mode: 2
-        priority: null
-        value: "1"
-    description: ""
+    description: ''
     disabled: false
     duration:
       combat: null
@@ -36,13 +27,13 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": combat
-            "1": combat
+            '0': combat
+            '1': combat
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
-            "1":
+            '1':
               isSituational: false
               onByDefault: false
     img: systems/cyberpunk-red-core/icons/compendium/cyberware/teleoptics.svg
@@ -50,8 +41,19 @@ effects:
     origin: null
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: bonuses.aimedShot
+          phase: initial
+          priority: null
+          type: add
+          value: '1'
+        - key: bonuses.singleShot
+          phase: initial
+          priority: null
+          type: add
+          value: '1'
+    tint: '#ffffff'
     transfer: true
     type: base
 flags:

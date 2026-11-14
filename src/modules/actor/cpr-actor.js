@@ -169,11 +169,11 @@ export default class CPRActor extends Actor {
    * @override
    * @returns nothing, just applies effects to the actor
    */
-  applyActiveEffects() {
+  applyActiveEffects(phase) {
     for (const e of this.allApplicableEffects()) {
       e.determineSuppression();
     }
-    return super.applyActiveEffects();
+    return super.applyActiveEffects(phase);
   }
 
   /**
@@ -1795,7 +1795,7 @@ export default class CPRActor extends Actor {
     const effectDoc = await this.createEmbeddedDocuments("ActiveEffect", [
       {
         name: SystemUtils.Localize("CPR.itemSheet.effects.newEffect"),
-        icon: "icons/svg/aura.svg",
+        img: "icons/svg/aura.svg",
         origin: this.uuid, // Do we still want this here?
         disabled: false,
       },

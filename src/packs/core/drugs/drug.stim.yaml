@@ -2,10 +2,10 @@ _id: r21n9rFplUOtnjHM
 _key: "!items!r21n9rFplUOtnjHM"
 effects:
   - _id: Tdev2grXyvKJvIhr
-    _key: "!items.effects!r21n9rFplUOtnjHM.Tdev2grXyvKJvIhr"
+    _key: '!items.effects!r21n9rFplUOtnjHM.Tdev2grXyvKJvIhr'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: null
       duplicateSource: null
       exportSource: null
@@ -13,12 +13,7 @@ effects:
       modifiedTime: null
       systemId: null
       systemVersion: null
-    changes:
-      - key: bonuses.hasPainSuppression
-        mode: 5
-        priority: null
-        value: "1"
-    description: ""
+    description: ''
     disabled: true
     duration:
       combat: null
@@ -32,9 +27,9 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": misc
+            '0': misc
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
     img: systems/cyberpunk-red-core/icons/compendium/drugs/stim.svg
@@ -42,8 +37,14 @@ effects:
     origin: null
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: bonuses.hasPainSuppression
+          phase: initial
+          priority: null
+          type: override
+          value: '1'
+    tint: '#ffffff'
     transfer: true
     type: base
 flags:

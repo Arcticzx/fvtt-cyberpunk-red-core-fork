@@ -2,10 +2,10 @@ _id: QDM0kdE3MK9YzjY3
 _key: "!items!QDM0kdE3MK9YzjY3"
 effects:
   - _id: fxIH2SP3zbjPTRg3
-    _key: "!items.effects!QDM0kdE3MK9YzjY3.fxIH2SP3zbjPTRg3"
+    _key: '!items.effects!QDM0kdE3MK9YzjY3.fxIH2SP3zbjPTRg3'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: 1794358417047
       duplicateSource: null
       exportSource: null
@@ -13,11 +13,7 @@ effects:
       modifiedTime: 1794358547187
       systemId: cyberpunk-red-core
       systemVersion: DUMMY_VALUE
-    changes:
-      - key: bonuses.run
-        mode: 2
-        value: "6"
-    description: ""
+    description: ''
     disabled: false
     duration:
       combat: null
@@ -31,9 +27,9 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": combat
+            '0': combat
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
     img: systems/cyberpunk-red-core/icons/compendium/cyberware/skate_foot.svg
@@ -41,8 +37,13 @@ effects:
     origin: Compendium.cyberpunk-red-core.core_cyberware.Item.QDM0kdE3MK9YzjY3
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: bonuses.run
+          phase: initial
+          type: add
+          value: '6'
+    tint: '#ffffff'
     transfer: true
     type: base
 flags:

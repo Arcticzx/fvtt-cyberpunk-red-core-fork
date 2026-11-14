@@ -10,13 +10,22 @@ const CloseUnlinkedSheetOnDelete = () => {
    * @param {TokenDocument} tokenDocument  The token object being deleted
    */
   Hooks.on("deleteToken", (tokenDocument) => {
-    if (!tokenDocument.isLinked) {
+    if (!tokenDocument.isLinked && tokenDocument.actor) {
       const tokenId = tokenDocument.id;
       const actorId = tokenDocument.actor.id;
-      const currentWindows = Object.values(ui.windows);
+      const actorUuid = tokenDocument.actor.uuid;
+      const currentWindows = Object.values(ui.windows ?? {});
       currentWindows.forEach((window) => {
         if (window.id === `actor-${actorId}-${tokenId}`) {
           window.close();
+        }
+      });
+      foundry.applications?.instances?.forEach((app) => {
+        if (
+          app.document === tokenDocument.actor ||
+          (actorUuid && app.document?.uuid === actorUuid)
+        ) {
+          app.close();
         }
       });
     }

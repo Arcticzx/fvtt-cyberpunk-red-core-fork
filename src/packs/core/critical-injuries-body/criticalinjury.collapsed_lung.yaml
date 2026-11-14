@@ -2,10 +2,10 @@ _id: RAZcouFe0FS1VN1o
 _key: "!items!RAZcouFe0FS1VN1o"
 effects:
   - _id: K5VZo8azU8QYk46R
-    _key: "!items.effects!RAZcouFe0FS1VN1o.K5VZo8azU8QYk46R"
+    _key: '!items.effects!RAZcouFe0FS1VN1o.K5VZo8azU8QYk46R'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: null
       duplicateSource: null
       exportSource: null
@@ -13,12 +13,7 @@ effects:
       modifiedTime: null
       systemId: null
       systemVersion: null
-    changes:
-      - key: system.stats.move.value
-        mode: 2
-        priority: null
-        value: "-2"
-    description: ""
+    description: ''
     disabled: false
     duration:
       combat: null
@@ -32,9 +27,9 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": stat
+            '0': stat
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
     img: >-
@@ -43,8 +38,14 @@ effects:
     origin: null
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: system.stats.move.value
+          phase: initial
+          priority: null
+          type: add
+          value: '-2'
+    tint: '#ffffff'
     transfer: true
     type: base
 flags:

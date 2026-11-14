@@ -1,4 +1,4 @@
-import CPRMod from "./rolls/cpr-modifiers.js";
+import CPRMod, { getEffectChanges } from "./rolls/cpr-modifiers.js";
 import CPR from "./system/config.js";
 import LOGGER from "./utils/cpr-logger.js";
 import SystemUtils from "./utils/cpr-systemUtils.js";
@@ -68,7 +68,7 @@ export default class CPRActiveEffectSheet extends ActiveEffectConfig {
 
     // Prepare the key input element for each Change (a select or a text input).
     modList.forEach((change, i) => {
-      const name = `changes.${i}.key`;
+      const name = `system.changes.${i}.key`;
       const selectClasses = ["key-key", "force-submit"];
       const value = change.key;
       switch (change.category) {
@@ -229,17 +229,22 @@ export default class CPRActiveEffectSheet extends ActiveEffectConfig {
    * @returns {Promise<void>}
    */
   static async #onAddMod() {
-    const idx = this.document.changes.length;
-    LOGGER.debug(`adding change defaults for changes.${idx}`);
-    const changes = this.document.toObject().changes;
+    const sourceObj = this.document.toObject();
+    const changes = foundry.utils.duplicate(
+      sourceObj.system?.changes ?? sourceObj.changes ?? [],
+    );
+    const idx = changes.length;
+    LOGGER.debug(`adding change defaults for system.changes.${idx}`);
     changes.push({
       key: "",
-      mode: CONST.ACTIVE_EFFECT_MODES.ADD,
+      type: "add",
+      phase: "initial",
+      priority: null,
       value: "0",
     });
     await this.submit({
       updateData: {
-        changes,
+        "system.changes": changes,
         [`flags.${game.system.id}.changes.cats.${idx}`]: "skill",
         [`flags.${game.system.id}.changes.situational.${idx}`]: {
           isSituational: false,
@@ -263,7 +268,10 @@ export default class CPRActiveEffectSheet extends ActiveEffectConfig {
   static async #onDeleteMod(event, target) {
     const modnum = parseInt(target.dataset.index, 10);
     // First, delete the change itself in the AE.
-    const changes = this.document.toObject().changes;
+    const sourceObj = this.document.toObject();
+    const changes = foundry.utils.duplicate(
+      sourceObj.system?.changes ?? sourceObj.changes ?? [],
+    );
     changes.splice(modnum, 1);
 
     // Then, reindex the corresponding flags for the deleted change.
@@ -299,7 +307,7 @@ export default class CPRActiveEffectSheet extends ActiveEffectConfig {
     });
 
     await this.document.update({
-      changes,
+      "system.changes": changes,
       [`flags.${game.system.id}.==changes`]: newFlags,
     });
   }
@@ -325,11 +333,12 @@ export default class CPRActiveEffectSheet extends ActiveEffectConfig {
       skillMap["bonuses.".concat(SystemUtils.slugify(skill.name))] = skill.name;
     }
 
+    const effectChanges = getEffectChanges(effect);
     const skillOptionConfigs = Object.entries(skillMap).map(([key, value]) => {
       return {
         value: key,
         label: SystemUtils.Localize(value),
-        disabled: effect.changes.some((change) => change.key === key),
+        disabled: effectChanges.some((change) => change.key === key),
       };
     });
 
@@ -348,13 +357,14 @@ export default class CPRActiveEffectSheet extends ActiveEffectConfig {
    */
   static getOtherOptionConfigs(effect) {
     const configs = {};
+    const effectChanges = getEffectChanges(effect);
     const aeKeyEntries = Object.entries(CPR.activeEffectKeys);
     aeKeyEntries.forEach(([categoryKey, data]) => {
       configs[categoryKey] = Object.entries(data).map(([effectKey, value]) => {
         return {
           value: effectKey,
           label: SystemUtils.Localize(value),
-          disabled: effect.changes.some((change) => change.key === effectKey),
+          disabled: effectChanges.some((change) => change.key === effectKey),
         };
       });
     });

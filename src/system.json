@@ -1,5 +1,5 @@
 {
-  "version": "DUMMY_VALUE",
+  "version": "0.93.0-v14.1",
   "flags": {
     "featureVideoURL": ""
   },
@@ -7,9 +7,9 @@
   "title": "Cyberpunk RED - CORE",
   "description": "Implementation of the Cyberpunk RED, Core Rules, for FVTT",
   "compatibility": {
-    "minimum": 13,
-    "verified": 13,
-    "maximum": 13
+    "minimum": 14,
+    "verified": 14,
+    "maximum": 14
   },
   "authors": [
     {
@@ -370,8 +370,8 @@
   "primaryTokenAttribute": "derivedStats.hp",
   "secondaryTokenAttribute": null,
   "background": "systems/cyberpunk-red-core/images/Foundry-Background.webp",
-  "url": "https://gitlab.com/cyberpunk-red-team/fvtt-cyberpunk-red-core",
-  "manifest": "https://gitlab.com/api/v4/projects/22820629/packages/generic/fvtt-cyberpunk-red-core/latest/system.json",
-  "download": "DUMMY_VALUE",
+  "url": "https://github.com/Arcticzx/fvtt-cyberpunk-red-core-fork",
+  "manifest": "https://github.com/Arcticzx/fvtt-cyberpunk-red-core-fork/releases/latest/download/system.json",
+  "download": "https://github.com/Arcticzx/fvtt-cyberpunk-red-core-fork/releases/download/v0.93.0-v14.1/cyberpunk-red-core.zip",
   "license": "GPL v3"
 }

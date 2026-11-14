@@ -52,7 +52,9 @@ export default class ClothingUpgradeEffects extends BaseMigrationScript {
         const isStat = key === "cool";
         changes.push({
           key: isStat ? "system.stats.cool.value" : "bonuses.wardrobeAndStyle",
-          mode: CONST.ACTIVE_EFFECT_MODES.ADD,
+          type: "add",
+          phase: "initial",
+          priority: null,
           value: String(modifier.value),
         });
         cats[index] = isStat ? "stat" : "skill";
@@ -69,7 +71,7 @@ export default class ClothingUpgradeEffects extends BaseMigrationScript {
           img: itemData.img,
           transfer: true,
           disabled: false,
-          changes,
+          system: { changes },
           flags: { [systemId]: { changes: { cats, situational } } },
         });
       }

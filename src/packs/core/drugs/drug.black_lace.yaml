@@ -2,10 +2,10 @@ _id: 6BM5WFyCyIM8lZib
 _key: "!items!6BM5WFyCyIM8lZib"
 effects:
   - _id: aNvneLolAXX4F6Rs
-    _key: "!items.effects!6BM5WFyCyIM8lZib.aNvneLolAXX4F6Rs"
+    _key: '!items.effects!6BM5WFyCyIM8lZib.aNvneLolAXX4F6Rs'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: null
       duplicateSource: null
       exportSource: null
@@ -13,12 +13,7 @@ effects:
       modifiedTime: null
       systemId: null
       systemVersion: null
-    changes:
-      - key: bonuses.hasPainSuppression
-        mode: 5
-        priority: null
-        value: "1"
-    description: ""
+    description: ''
     disabled: true
     duration:
       combat: null
@@ -32,9 +27,9 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": misc
+            '0': misc
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
     img: systems/cyberpunk-red-core/icons/compendium/status/black_lace.svg
@@ -42,15 +37,21 @@ effects:
     origin: null
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: bonuses.hasPainSuppression
+          phase: initial
+          priority: null
+          type: override
+          value: '1'
+    tint: '#ffffff'
     transfer: true
     type: base
   - _id: L4P56fOWGjVT82ES
-    _key: "!items.effects!6BM5WFyCyIM8lZib.L4P56fOWGjVT82ES"
+    _key: '!items.effects!6BM5WFyCyIM8lZib.L4P56fOWGjVT82ES'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: null
       duplicateSource: null
       exportSource: null
@@ -58,12 +59,7 @@ effects:
       modifiedTime: null
       systemId: null
       systemVersion: null
-    changes:
-      - key: system.stats.ref.value
-        mode: 2
-        priority: null
-        value: "-2"
-    description: ""
+    description: ''
     disabled: true
     duration:
       combat: null
@@ -77,9 +73,9 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": stat
+            '0': stat
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
     img: >-
@@ -88,8 +84,14 @@ effects:
     origin: null
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: system.stats.ref.value
+          phase: initial
+          priority: null
+          type: add
+          value: '-2'
+    tint: '#ffffff'
     transfer: true
     type: base
 flags:

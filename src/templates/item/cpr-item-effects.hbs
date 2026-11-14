@@ -13,12 +13,12 @@
             <div>
               <span class="text-semi">{{effect.name}}</span>
               <br/>
-              {{#if effect.changes.length }}
-                {{#each effect.changes as |change| }}
+              {{#if effect.system.changes.length }}
+                {{#each effect.system.changes as |change| }}
                   {{!-- "this" is now an individual "change" for the AE object --}}
                   {{cprGetChangeNameByKey ../../item (lookup effect.flags.cyberpunk-red-core.changes.cats @index) change.key}}
                   {{#if change.value }}
-                    {{cprEffectModMode change.mode change.value}}
+                    {{cprEffectModMode change.type change.value}}
                   {{else}}
                     0
                   {{~/if}}

@@ -3,7 +3,10 @@ import CPR from "./config.js";
 import SystemUtils from "../utils/cpr-systemUtils.js";
 import TextUtils from "../utils/TextUtils.js";
 import CPRActiveEffect from "../cpr-active-effect.js";
-import CPRMod from "../rolls/cpr-modifiers.js";
+import CPRMod, {
+  getEffectChanges,
+  isEffectSuppressed,
+} from "../rolls/cpr-modifiers.js";
 import renderInstalledTree from "../utils/cpr-installed-tree.js";
 import { applyUpgradeValue } from "../item/mixins/cpr-upgradable.js";
 
@@ -833,14 +836,21 @@ export default function registerHandlebarsHelpers() {
   Handlebars.registerHelper("cprEffectModMode", (mode, value) => {
     switch (mode) {
       case 1:
+      case "multiply":
         return `*${value}`;
       case 2:
+      case "add":
         return value > 0 ? `+${value}` : value; // account for minus already being there for negative numbers
+      case "subtract":
+        return value > 0 ? `-${value}` : `+${Math.abs(value)}`;
       case 3:
+      case "downgrade":
         return `<=${value}`;
       case 4:
+      case "upgrade":
         return `>=${value}`;
       case 5:
+      case "override":
         return `=${value}`;
       default:
         return `?${value}`;
@@ -859,9 +869,10 @@ export default function registerHandlebarsHelpers() {
    * @returns {Bool} true or false if the toggle glyph should be displayed
    */
   Handlebars.registerHelper("cprShowEffectToggle", (effect, name) => {
+    const suppressed = isEffectSuppressed(effect);
     if (effect.sourceName === name) return true;
-    if (!effect.system.isSuppressed && effect.usage !== "always") return true;
-    if (effect.system.isSuppressed && effect.usage === "toggled") return true;
+    if (!suppressed && effect.usage !== "always") return true;
+    if (suppressed && effect.usage === "toggled") return true;
     return false;
   });
 
@@ -883,7 +894,11 @@ export default function registerHandlebarsHelpers() {
       const flag = doc.getFlag(game.system.id, "changes")
         ? doc.getFlag(game.system.id, "changes")
         : [];
-      if (doc.changes.length === flag.length) {
+      const changesLength =
+        doc instanceof CPRActiveEffect
+          ? getEffectChanges(doc).length
+          : (doc?.changes?.length ?? 0);
+      if (changesLength === flag.length) {
         returnString = "???";
         LOGGER.error(
           "Undefined change category! No idea what this effect changes!",

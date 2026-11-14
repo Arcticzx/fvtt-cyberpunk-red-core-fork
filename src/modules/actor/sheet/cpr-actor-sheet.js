@@ -7,7 +7,10 @@ import SystemUtils from "../../utils/cpr-systemUtils.js";
 import CPRSheetUtils from "../../utils/SheetUtils.js";
 import CPRScrollableSheetMixin from "../../utils/cpr-scrollable-sheet.js";
 import createImageContextMenu from "../../utils/cpr-imageContextMenu.js";
-import CPRMod from "../../rolls/cpr-modifiers.js";
+import CPRMod, {
+  getEffectChanges,
+  isEffectSuppressed,
+} from "../../rolls/cpr-modifiers.js";
 import { cprConfirm, cprFormPrompt } from "../../dialog/cpr-dialog.js";
 import { ContainerUtils } from "../../item/mixins/cpr-container.js";
 
@@ -263,6 +266,8 @@ export default class CPRActorSheet extends CPRScrollableSheetMixin(
       // Then, we create CPRMods (which have a simplified data structure) from each effect.changes,
       // Then, put the CPRMods relevant to each category (permanent, situational, inactive)
       // into our simplified effect's changes. Then just push that to the effects in each relevant category.
+      const suppressed = isEffectSuppressed(e);
+      const effectChanges = getEffectChanges(e);
       const simplifiedEffect = {
         name: e.name,
         sourceName: e.sourceName,
@@ -270,8 +275,9 @@ export default class CPRActorSheet extends CPRScrollableSheetMixin(
         uuid: e.uuid,
         img: e.img,
         usage: e.usage,
+        isSuppressed: suppressed,
         system: {
-          isSuppressed: e.system.isSuppressed,
+          isSuppressed: suppressed,
         },
         disabled: e.disabled,
       };
@@ -284,12 +290,12 @@ export default class CPRActorSheet extends CPRScrollableSheetMixin(
       ) {
         // Get effects with no changes and display in the Permanent Effects category.
         // This is a rare case where a user makes an effect but doesn't add any changes.
-        if (e.changes.length === 0 && !e.disabled && !e.system.isSuppressed) {
+        if (effectChanges.length === 0 && !e.disabled && !suppressed) {
           categories.permanent.effects.push(simplifiedEffect);
         }
 
         // Get situational, non-disabled effects.
-        if (!e.disabled && !e.system.isSuppressed) {
+        if (!e.disabled && !suppressed) {
           const situationalMods = CPRMod.getAllModifiers([e]).filter(
             (m) => m.isSituational,
           );
@@ -302,7 +308,7 @@ export default class CPRActorSheet extends CPRScrollableSheetMixin(
         }
 
         // Get inactive (disabled or suppressed) effects.
-        if (e.disabled || e.system.isSuppressed) {
+        if (e.disabled || suppressed) {
           // The second argument in the following function is set to true, so that it gets disabled modifiers.
           simplifiedEffect.changes = CPRMod.getAllModifiers([e], true);
           categories.inactive.effects.push(simplifiedEffect);

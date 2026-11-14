@@ -2,10 +2,10 @@ _id: oSCkXo6VZXIwjWhL
 _key: "!items!oSCkXo6VZXIwjWhL"
 effects:
   - _id: 74gFz2rJ7G0uBkgx
-    _key: "!items.effects!oSCkXo6VZXIwjWhL.74gFz2rJ7G0uBkgx"
+    _key: '!items.effects!oSCkXo6VZXIwjWhL.74gFz2rJ7G0uBkgx'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: null
       duplicateSource: null
       exportSource: null
@@ -13,12 +13,7 @@ effects:
       modifiedTime: null
       systemId: null
       systemVersion: null
-    changes:
-      - key: bonuses.acting
-        mode: 2
-        priority: null
-        value: "2"
-    description: ""
+    description: ''
     disabled: false
     duration:
       combat: null
@@ -32,9 +27,9 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": skill
+            '0': skill
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
     img: systems/cyberpunk-red-core/icons/compendium/cyberware/audiovox.svg
@@ -42,15 +37,21 @@ effects:
     origin: null
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: bonuses.acting
+          phase: initial
+          priority: null
+          type: add
+          value: '2'
+    tint: '#ffffff'
     transfer: true
     type: base
   - _id: dqjjjMsDuHu1WoiE
-    _key: "!items.effects!oSCkXo6VZXIwjWhL.dqjjjMsDuHu1WoiE"
+    _key: '!items.effects!oSCkXo6VZXIwjWhL.dqjjjMsDuHu1WoiE'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: null
       duplicateSource: null
       exportSource: null
@@ -58,12 +59,7 @@ effects:
       modifiedTime: null
       systemId: null
       systemVersion: null
-    changes:
-      - key: bonuses.playInstrument
-        mode: 2
-        priority: null
-        value: "2"
-    description: ""
+    description: ''
     disabled: false
     duration:
       combat: null
@@ -77,9 +73,9 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": skill
+            '0': skill
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
     img: systems/cyberpunk-red-core/icons/compendium/cyberware/audiovox.svg
@@ -87,8 +83,14 @@ effects:
     origin: null
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: bonuses.playInstrument
+          phase: initial
+          priority: null
+          type: add
+          value: '2'
+    tint: '#ffffff'
     transfer: true
     type: base
 flags:

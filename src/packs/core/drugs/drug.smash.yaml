@@ -2,10 +2,10 @@ _id: PRLDaeBVeMuBBIeO
 _key: "!items!PRLDaeBVeMuBBIeO"
 effects:
   - _id: v688v2AQZUpGXV7t
-    _key: "!items.effects!PRLDaeBVeMuBBIeO.v688v2AQZUpGXV7t"
+    _key: '!items.effects!PRLDaeBVeMuBBIeO.v688v2AQZUpGXV7t'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: null
       duplicateSource: null
       exportSource: null
@@ -13,32 +13,7 @@ effects:
       modifiedTime: null
       systemId: null
       systemVersion: null
-    changes:
-      - key: bonuses.acting
-        mode: 2
-        priority: null
-        value: "2"
-      - key: bonuses.contortionist
-        mode: 2
-        priority: null
-        value: "2"
-      - key: bonuses.conversation
-        mode: 2
-        priority: null
-        value: "2"
-      - key: bonuses.dance
-        mode: 2
-        priority: null
-        value: "2"
-      - key: bonuses.humanPerception
-        mode: 2
-        priority: null
-        value: "2"
-      - key: bonuses.persuasion
-        mode: 2
-        priority: null
-        value: "2"
-    description: ""
+    description: ''
     disabled: true
     duration:
       combat: null
@@ -52,29 +27,29 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": skill
-            "1": skill
-            "2": skill
-            "3": skill
-            "4": skill
-            "5": skill
+            '0': skill
+            '1': skill
+            '2': skill
+            '3': skill
+            '4': skill
+            '5': skill
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
-            "1":
+            '1':
               isSituational: false
               onByDefault: false
-            "2":
+            '2':
               isSituational: false
               onByDefault: false
-            "3":
+            '3':
               isSituational: false
               onByDefault: false
-            "4":
+            '4':
               isSituational: false
               onByDefault: false
-            "5":
+            '5':
               isSituational: false
               onByDefault: false
     img: systems/cyberpunk-red-core/icons/compendium/status/smash.svg
@@ -82,15 +57,46 @@ effects:
     origin: null
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: bonuses.acting
+          phase: initial
+          priority: null
+          type: add
+          value: '2'
+        - key: bonuses.contortionist
+          phase: initial
+          priority: null
+          type: add
+          value: '2'
+        - key: bonuses.conversation
+          phase: initial
+          priority: null
+          type: add
+          value: '2'
+        - key: bonuses.dance
+          phase: initial
+          priority: null
+          type: add
+          value: '2'
+        - key: bonuses.humanPerception
+          phase: initial
+          priority: null
+          type: add
+          value: '2'
+        - key: bonuses.persuasion
+          phase: initial
+          priority: null
+          type: add
+          value: '2'
+    tint: '#ffffff'
     transfer: true
     type: base
   - _id: R7hdY2qZux5j9oVJ
-    _key: "!items.effects!PRLDaeBVeMuBBIeO.R7hdY2qZux5j9oVJ"
+    _key: '!items.effects!PRLDaeBVeMuBBIeO.R7hdY2qZux5j9oVJ'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: null
       duplicateSource: null
       exportSource: null
@@ -98,32 +104,7 @@ effects:
       modifiedTime: null
       systemId: null
       systemVersion: null
-    changes:
-      - key: bonuses.acting
-        mode: 2
-        priority: null
-        value: "-2"
-      - key: bonuses.contortionist
-        mode: 2
-        priority: null
-        value: "-2"
-      - key: bonuses.conversation
-        mode: 2
-        priority: null
-        value: "-2"
-      - key: bonuses.dance
-        mode: 2
-        priority: null
-        value: "-2"
-      - key: bonuses.humanPerception
-        mode: 2
-        priority: null
-        value: "-2"
-      - key: bonuses.persuasion
-        mode: 2
-        priority: null
-        value: "-2"
-    description: ""
+    description: ''
     disabled: true
     duration:
       combat: null
@@ -137,29 +118,29 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": skill
-            "1": skill
-            "2": skill
-            "3": skill
-            "4": skill
-            "5": skill
+            '0': skill
+            '1': skill
+            '2': skill
+            '3': skill
+            '4': skill
+            '5': skill
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
-            "1":
+            '1':
               isSituational: false
               onByDefault: false
-            "2":
+            '2':
               isSituational: false
               onByDefault: false
-            "3":
+            '3':
               isSituational: false
               onByDefault: false
-            "4":
+            '4':
               isSituational: false
               onByDefault: false
-            "5":
+            '5':
               isSituational: false
               onByDefault: false
     img: systems/cyberpunk-red-core/icons/compendium/status/smash_addiciton.svg
@@ -167,8 +148,39 @@ effects:
     origin: null
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: bonuses.acting
+          phase: initial
+          priority: null
+          type: add
+          value: '-2'
+        - key: bonuses.contortionist
+          phase: initial
+          priority: null
+          type: add
+          value: '-2'
+        - key: bonuses.conversation
+          phase: initial
+          priority: null
+          type: add
+          value: '-2'
+        - key: bonuses.dance
+          phase: initial
+          priority: null
+          type: add
+          value: '-2'
+        - key: bonuses.humanPerception
+          phase: initial
+          priority: null
+          type: add
+          value: '-2'
+        - key: bonuses.persuasion
+          phase: initial
+          priority: null
+          type: add
+          value: '-2'
+    tint: '#ffffff'
     transfer: true
     type: base
 flags:

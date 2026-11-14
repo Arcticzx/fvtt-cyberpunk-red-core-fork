@@ -2,10 +2,10 @@ _id: KwNqQrQpLzbhpDNR
 _key: "!items!KwNqQrQpLzbhpDNR"
 effects:
   - _id: kN8ZSjESSuKrUSfU
-    _key: "!items.effects!KwNqQrQpLzbhpDNR.kN8ZSjESSuKrUSfU"
+    _key: '!items.effects!KwNqQrQpLzbhpDNR.kN8ZSjESSuKrUSfU'
     _stats:
       compendiumSource: null
-      coreVersion: "13.351"
+      coreVersion: '13.351'
       createdTime: null
       duplicateSource: null
       exportSource: null
@@ -13,12 +13,7 @@ effects:
       modifiedTime: null
       systemId: null
       systemVersion: null
-    changes:
-      - key: bonuses.pathfinder
-        mode: 2
-        priority: null
-        value: "2"
-    description: ""
+    description: ''
     disabled: false
     duration:
       combat: null
@@ -32,9 +27,9 @@ effects:
       cyberpunk-red-core:
         changes:
           cats:
-            "0": netrun
+            '0': netrun
           situational:
-            "0":
+            '0':
               isSituational: false
               onByDefault: false
     img: systems/cyberpunk-red-core/icons/compendium/programs/see_ya.svg
@@ -42,8 +37,14 @@ effects:
     origin: null
     sort: 0
     statuses: []
-    system: {}
-    tint: "#ffffff"
+    system:
+      changes:
+        - key: bonuses.pathfinder
+          phase: initial
+          priority: null
+          type: add
+          value: '2'
+    tint: '#ffffff'
     transfer: true
     type: base
 flags:

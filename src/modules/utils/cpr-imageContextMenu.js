@@ -7,7 +7,7 @@ const ContextMenu = foundry.applications.ux.ContextMenu.implementation;
  * The ContextMenu contains a menu item that enables the user to share an image with other players.
  * @param {jQuery|HTMLElement} root - The sheet root: a jQuery object (AppV1 sheets) or a native HTMLElement (AppV2 sheets)
  * @param {string} contextMenuTargetSelector - The selector for the element that will open the ContextMenu when right clicked
- * @param {{name: string, img: string}} data - The created ContextMenu
+ * @param {{name: string, img: string, uuid?: string}} data - The document or image data whose artwork can be popped out
  */
 export default function createImageContextMenu(
   root,
@@ -18,15 +18,23 @@ export default function createImageContextMenu(
   const html = root instanceof HTMLElement ? root : root[0];
   const menuItems = [
     {
-      name: SystemUtils.Format("CPR.sheets.image.showPlayers"),
+      label: SystemUtils.Format("CPR.sheets.image.showPlayers"),
       icon: '<i class="fas fa-eye"></i>',
-      callback: () => {
-        const popout = new ImagePopout(data.img, {
-          title: data.name,
-          shareable: true,
+      onClick: () => {
+        const { ImagePopout } = foundry.applications.apps;
+        const popout = new ImagePopout({
+          src: data.img,
+          uuid: data.uuid ?? null,
+          showTitle: true,
+          window: { title: data.name },
         });
         popout.render(true);
-        popout.shareImage(true);
+        popout.shareImage({
+          image: data.img,
+          title: data.name,
+          showTitle: true,
+          ...(data.uuid ? { uuid: data.uuid } : {}),
+        });
       },
     },
   ];

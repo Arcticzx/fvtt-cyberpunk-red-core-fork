@@ -57,9 +57,9 @@
         </div>
         <div class="injuries-effects text-nowrap">
           {{#each this.effects as |effect|}}
-            {{#each effect.changes as |change| }}
+            {{#each effect.system.changes as |change| }}
               <span class="text-pill text-padding-right-smaller">
-                {{cprGetChangeNameByKey ../../item (lookup effect.flags.cyberpunk-red-core.changes.cats @index) change.key}} {{cprEffectModMode change.mode change.value}}
+                {{cprGetChangeNameByKey ../../item (lookup effect.flags.cyberpunk-red-core.changes.cats @index) change.key}} {{cprEffectModMode change.type change.value}}
               </span>
             {{/each}}
           {{/each}}
