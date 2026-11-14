@@ -33,6 +33,122 @@ function addDirectoryToZip(zip, dir, prefix) {
  * Build the compiled system into `dist/` and package `release/system.json`
  * plus `release/cyberpunk-red-core.zip` pointing to the GitHub Release URLs.
  */
+function runGit(args) {
+  try {
+    return execFileSync("git", args, {
+      cwd: ROOT,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+  } catch {
+    return null;
+  }
+}
+
+function formatAuthorHandle(name, email) {
+  const noreplyMatch = email.match(
+    /^(?:\d+\+)?([^@]+)@users\.noreply\.github\.com$/i,
+  );
+  if (noreplyMatch) {
+    return `@${noreplyMatch[1]}`;
+  }
+
+  const cleanName = name.trim();
+  if (cleanName && !/\s/.test(cleanName)) {
+    return `@${cleanName}`;
+  }
+  return cleanName || "unknown";
+}
+
+function formatCommitSubject(subject) {
+  const clean = subject.trim();
+  if (
+    /^(feat|fix|docs|ci|chore|refactor|test|build|style|perf)(\([^)]+\))?:/i.test(
+      clean,
+    )
+  ) {
+    return clean;
+  }
+  if (clean.startsWith("Adapt Cyberpunk RED (dev/0.93) for Foundry VTT v14")) {
+    return `feat(v14): ${clean.charAt(0).toLowerCase()}${clean.slice(1)}`;
+  }
+  if (clean.startsWith("Document Foundry v14 fork status")) {
+    return `docs(readme): ${clean.charAt(0).toLowerCase()}${clean.slice(1)}`;
+  }
+  return clean;
+}
+
+function resolvePrevRef(targetRef, tag) {
+  const parentRef = `${targetRef}^`;
+  const previousTag = runGit([
+    "describe",
+    "--tags",
+    "--abbrev=0",
+    "--match",
+    "v*",
+    "--exclude",
+    tag,
+    parentRef,
+  ]);
+  if (previousTag) {
+    return previousTag;
+  }
+
+  const rootCommits = runGit(["rev-list", "--max-parents=0", targetRef]);
+  if (!rootCommits) {
+    return null;
+  }
+  const firstRoot = rootCommits.split(/\r?\n/)[0];
+  return runGit(["rev-parse", "--short", firstRoot]) || firstRoot;
+}
+
+function buildReleaseNotes({ tag, targetRef, repoSlug }) {
+  const headSha = runGit(["rev-parse", targetRef]);
+  const headShort = runGit(["rev-parse", "--short", targetRef]) || targetRef;
+  const tagSha = runGit(["rev-parse", "--verify", `refs/tags/${tag}^{commit}`]);
+  const prevRef = resolvePrevRef(targetRef, tag);
+
+  const rangeSpec =
+    prevRef && headShort && prevRef !== headShort
+      ? `${prevRef}..${targetRef}`
+      : targetRef;
+  const rawLog =
+    runGit([
+      "log",
+      "--no-merges",
+      "--format=%H%x1f%s%x1f%an%x1f%ae",
+      rangeSpec,
+    ]) || "";
+
+  const bullets = rawLog
+    .split(/\r?\n/)
+    .filter(Boolean)
+    .map((line) => {
+      const [hash, subject = "", authorName = "", authorEmail = ""] =
+        line.split("\x1f");
+      const formattedSubject = formatCommitSubject(subject);
+      const author = formatAuthorHandle(authorName, authorEmail);
+      return `* ${formattedSubject} by ${author} in https://github.com/${repoSlug}/commit/${hash}`;
+    });
+
+  const sections = ["## What's Changed"];
+  if (bullets.length > 0) {
+    sections.push("", ...bullets);
+  } else {
+    sections.push("", `* Release ${tag}`);
+  }
+
+  if (prevRef && prevRef !== headShort) {
+    const compareEnd = !tagSha || tagSha === headSha ? tag : headShort;
+    sections.push(
+      "",
+      `**Full Changelog**: https://github.com/${repoSlug}/compare/${prevRef}...${compareEnd}`,
+    );
+  }
+
+  return `${sections.join("\n")}\n`;
+}
+
 function main() {
   const fallbackManifest = path.join(ROOT, "src", "system.json");
   const rawTag =
@@ -43,6 +159,7 @@ function main() {
   const tag = rawTag.startsWith("v") ? rawTag : `v${rawTag}`;
   const repoSlug =
     process.env.GITHUB_REPOSITORY || "Arcticzx/fvtt-cyberpunk-red-core-fork";
+  const targetRef = process.env.RELEASE_TARGET_REF || "HEAD";
 
   const env = { ...process.env };
   delete env.FOUNDRY_DATA_PATH;
@@ -72,6 +189,10 @@ function main() {
     "utf8",
   );
 
+  const releaseNotes = buildReleaseNotes({ tag, targetRef, repoSlug });
+  const notesOutPath = path.join(RELEASE_DIR, "RELEASE_NOTES.md");
+  fs.writeFileSync(notesOutPath, releaseNotes, "utf8");
+
   const zip = new AdmZip();
   addDirectoryToZip(zip, DIST_DIR, "");
   const zipOutPath = path.join(RELEASE_DIR, `${manifest.id}.zip`);
@@ -80,6 +201,7 @@ function main() {
   console.log(`Release version: ${manifest.version}`);
   console.log(`Manifest URL:    ${manifest.manifest}`);
   console.log(`Download URL:    ${manifest.download}`);
+  console.log(`Notes written:   ${notesOutPath}`);
   console.log(`Package written: ${zipOutPath}`);
 }
 

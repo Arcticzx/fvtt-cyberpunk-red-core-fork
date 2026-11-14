@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -43,12 +45,24 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
         run: |
+          NOTES_FILE="release/RELEASE_NOTES.md"
+          PREV_TAG="$(git describe --tags --abbrev=0 --match 'v*' --exclude "$TAG" HEAD^ 2>/dev/null || true)"
+          API_ARGS=(-f "tag_name=$TAG" -f "target_commitish=$GITHUB_SHA" --jq '.body')
+          if [ -n "$PREV_TAG" ]; then
+            API_ARGS+=(-f "previous_tag_name=$PREV_TAG")
+          fi
+          if PR_NOTES="$(gh api "repos/$GITHUB_REPOSITORY/releases/generate-notes" "${API_ARGS[@]}" 2>/dev/null)" && printf '%s\n' "$PR_NOTES" | grep -qE '^\* .+ in .+/pull/'; then
+            printf '%s\n' "$PR_NOTES" > "$NOTES_FILE"
+          fi
+
           if gh release view "$TAG" >/dev/null 2>&1; then
             gh release upload "$TAG" release/system.json release/cyberpunk-red-core.zip --clobber
+            gh release edit "$TAG" --title "$TAG" --notes-file "$NOTES_FILE" --latest
           else
             gh release create "$TAG" \
               release/system.json \
               release/cyberpunk-red-core.zip \
-              --title "Cyberpunk RED - CORE $TAG (Foundry v14)" \
-              --notes "Foundry VTT v14 build from branch dev with v14 compatibility patches."
+              --title "$TAG" \
+              --notes-file "$NOTES_FILE" \
+              --latest
           fi
