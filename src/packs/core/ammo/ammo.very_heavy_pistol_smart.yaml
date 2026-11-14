@@ -1,0 +1,60 @@
+_id: FXatnNvunRDgqfbQ
+_key: "!items!FXatnNvunRDgqfbQ"
+effects: []
+flags:
+  cyberpunk-red-core:
+    _migration:
+      current: 42
+      previous: "41"
+folder: null
+img: systems/cyberpunk-red-core/icons/compendium/ammo/pistolveryheavy_smart.svg
+name: Very Heavy Pistol (Smart)
+ownership:
+  default: 0
+sort: 0
+system:
+  ablationValue: 1
+  amount: 10
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        If you miss a single shot attack by 4 or less, make a
+        [[/r 1d10red+10 #Smart Ammo Attack]]{Smart Ammo} attack roll. Your target can
+        still attempt to dodge the second roll as normal.
+      </p>
+      <blockquote>
+        <p>
+          Requires
+          @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.wFp72x2FXhipZXPj]{Targeting Scope Cyberware}
+          - Not enforced by system.
+        </p>
+      </blockquote>
+  favorite: false
+  installLocation: mall
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    crit:
+      bonus: 5
+      count: 2
+      override: false
+      threshold: 0
+    damage:
+      minimum: 1d6
+      mode: none
+      value: 3d6
+  price:
+    market: 500
+  size: 0
+  sources:
+    - book: Cyberpunk RED
+      page: 346
+  type: smart
+  variety: vHeavyPistol
+type: ammo

@@ -1,0 +1,553 @@
+{
+  "label": "Cyberware",
+  "mapping": {
+    "dvTable": "system.dvTable"
+  },
+  "entries": {
+    "Amplified Hearing": {
+      "name": "Udito Amplificato",
+      "description": "<p>Provides +2 bonus to <strong>Perception</strong> checks that use hearing.</p>\n",
+      "dvTable": ""
+    },
+    "Anti-Dazzle": {
+      "name": "Antiriflesso",
+      "description": "<p>\n  Provides immunity to dazzling effects like those produced by\n  @UUID[Compendium.cyberpunk-red-core.core_ammo.Item.e8gDMbdK1oPKwhqW]{Flashbang Grenades}.\n</p>\n<blockquote>\n  <p>Cyberware must be paired to provide associated benefit.</p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Artificial Shoulder Mount": {
+      "name": "Innesto Spalla Artificiale",
+      "description": "<p>Allows you to install an extra pair of cyberarms.</p>\n<blockquote>\n  <p>Additional cyberarms are sold &amp; installed separately.</p>\n  <p>\n    Install your extra pair of foundational Cyberarms as normal, do not install\n    your extra cyberarms into this item.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Audio Recorder": {
+      "name": "Registratore Audio",
+      "description": "<p>\n  Can save audio recordings onto a\n  @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.gAfBLrpJzkKVtr8o]{Memory Chip}\n  or linked\n  @UUID[Compendium.cyberpunk-red-core.core_gear.Item.GqYz689ddSKQHMen]{Agent}.\n</p>\n",
+      "dvTable": ""
+    },
+    "AudioVox": {
+      "name": "AudioVox",
+      "description": "<p>\n  Autotune synthesizer. Provides +2 to <strong>Acting</strong> and\n  <strong>Play Instrument</strong> checks.\n</p>\n",
+      "dvTable": ""
+    },
+    "Big Knucks": {
+      "name": "Nocche Blindate",
+      "description": "<p>\n  Armored knuckles which function as a Melee Weapon. Can be concealed without a\n  check.\n</p>\n",
+      "dvTable": ""
+    },
+    "Biomonitor": {
+      "name": "Biomonitor",
+      "description": "<p>Impianto sotto pelle con LED che mostra letture vitali. Può essere collegato al tuo Agent. </p>",
+      "dvTable": ""
+    },
+    "Braindance Recorder": {
+      "name": "Registratore Braindance",
+      "description": "<p>\n  Records your memories onto a\n  @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.gAfBLrpJzkKVtr8o]{Memory Chip}\n  or linked\n  @UUID[Compendium.cyberpunk-red-core.core_gear.Item.GqYz689ddSKQHMen]{Agent}.\n  Playback requires a\n  @UUID[Compendium.cyberpunk-red-core.core_gear.Item.Ed0JaqTO1JyAUa47]{Braindance Viewer}.\n</p>\n",
+      "dvTable": ""
+    },
+    "Bug Detector": {
+      "name": "Rilevatore di Cimici",
+      "description": "<p>Notifies the user of bugs or taps within 2m/yds.</p>\n",
+      "dvTable": ""
+    },
+    "Chemical Analyzer": {
+      "name": "Analizzatore Chimico",
+      "description": "<p>Test the chemical composition of a sample as an action.</p>\n<blockquote>\n  <p>\n    Chipware must be installed into a\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.IJarQGKk5rPayoLT]{Chipware Socket}\n    or similar device.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Chemskin": {
+      "name": "Chimipelle",
+      "description": "<p>Permanent dyes implanted into the skin.</p>\n<blockquote>\n  <p>\n    <strong>+2 Personal Grooming</strong> when installed with\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.opzHe5mz24EwqNCM]{Techhair}.\n    Effects do not stack.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Chipware Socket": {
+      "name": "Alveolo",
+      "description": "<p>Singola presa per l'installazione e la rimozione di un pezzo di chipware. Si possono installare prese multiple da acquistare singolarmente. Requisiti: Collegamento Neurale</p>",
+      "dvTable": ""
+    },
+    "Chyron": {
+      "name": "Chyron",
+      "description": "<p>Piccolo schermo nel tuo occhio per vedere video, messaggi da altri cyberware o dispositivi. Fornisce picture-in-picture per quei momenti noiosi. </p>",
+      "dvTable": ""
+    },
+    "Color Shift": {
+      "name": "Cambio Colore",
+      "description": "<p>Ti permette di cambiare gli occhi con un numero illimitato di colori e motivi. Requisiti: Cyberocchio</p>",
+      "dvTable": ""
+    },
+    "Contraceptive Implant": {
+      "name": "Impianto Contraccettivo",
+      "description": "<p>Previene una gravidanza indesiderata.</p>",
+      "dvTable": ""
+    },
+    "Cyberarm": {
+      "name": "Cyberbraccio",
+      "description": "<p>A cybernetic arm with room for upgrades.</p>\n",
+      "dvTable": ""
+    },
+    "Cyberaudio Suite": {
+      "name": "Sistema Cyberudito",
+      "description": "<p>Un'interfaccia di base per miglioramenti audio.</p>",
+      "dvTable": ""
+    },
+    "Cyberdeck (Hardwired)": {
+      "name": "Cyberdeck (Cablato)",
+      "description": "<p>Un cyberdeck. Sempre disponibile. Requisiti: Cyberbraccio, 3 Slot, Collegamento Neurale e Connettori d'Interfaccia</p>",
+      "dvTable": ""
+    },
+    "Cybereye": {
+      "name": "Cyberocchio",
+      "description": "<p>Un occhio artificiale. Scegli Kiroshi Optics!</p>",
+      "dvTable": ""
+    },
+    "Cyberleg": {
+      "name": "Cybergamba",
+      "description": "<p>A cybernetic replacement leg.</p>\n",
+      "dvTable": ""
+    },
+    "Cybersnake": {
+      "name": "Cyberserpente",
+      "description": "<p>\n  Install a weaponized tentacle into your throat that can be concealed without a\n  check.\n</p>\n",
+      "dvTable": ""
+    },
+    "Dartgun": {
+      "name": "Lanciadardi",
+      "description": "<p>Store and shoot a single dart from your eye.</p>\n",
+      "dvTable": "DV Pistol"
+    },
+    "Difficult Skill Chip": {
+      "name": "Chip Abilità",
+      "description": "<p>\n  Provides a value of <strong>3</strong> to a specific <strong>(x2)</strong>\n  <strong>skill</strong> while installed (provides no effect if the skill is\n  already 3+).\n</p>\n<blockquote>\n  <p>\n    Chipware must be installed into a\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.IJarQGKk5rPayoLT]{Chipware Socket}\n    or similar device.\n  </p>\n  <p>Requires manual AE creation.</p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "EMP Threading": {
+      "name": "Filamenti EMP",
+      "description": "<p>PCB traces etched into the skin.</p>\n",
+      "dvTable": ""
+    },
+    "Enhanced Antibodies": {
+      "name": "Anticorpi Potenziati",
+      "description": "<p>Raddoppia la guarigione dei PF dopo un giorno di riposo completo. </p>",
+      "dvTable": ""
+    },
+    "Exposed Covering (Cyber Arm)": {
+      "name": "Exposed Covering (Cyber Arm)",
+      "description": "<p>\n  Your cybernetics are exposed, maybe you should purchase a covering for your\n  arm?\n</p>\n",
+      "dvTable": ""
+    },
+    "Exposed Covering (Cyber Leg)": {
+      "name": "Exposed Covering (Cyber Leg)",
+      "description": "<p>\n  Your cybernetics are exposed, maybe you should purchase a covering for your\n  arm?\n</p>\n",
+      "dvTable": ""
+    },
+    "Gills": {
+      "name": "Branchie",
+      "description": "<p>Permette di respirare sott'acqua. </p>",
+      "dvTable": ""
+    },
+    "Grafted Muscle and Bone Lace": {
+      "name": "Laccio Osseo-Muscolare",
+      "description": "<p>Increase <strong>BODY</strong> by 2.</p>\n<blockquote>\n  <p>Effect stacks up to <strong>BODY 10</strong></p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Grapple Hand": {
+      "name": "Mano Rampino",
+      "description": "<p>A 30m retractable grappling hook embedded into your hand.</p>\n<blockquote>\n  <p>Cannot be used to <strong>Grapple</strong> a target at range.</p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Grip Foot": {
+      "name": "Piede Grip",
+      "description": "<p>Provides traction for climbing vertically.</p>\n<blockquote><p>Must be paired.</p></blockquote>\n",
+      "dvTable": ""
+    },
+    "Hardened Shielding (Cyber Arm)": {
+      "name": "Schermatura Rinforzata (Cyberbraccio)",
+      "description": "<p>Il braccio e le opzioni installate non sono influenzate dagli impulsi EMPe programmi, salvo i Black ICE. </p>",
+      "dvTable": ""
+    },
+    "Hardened Shielding (Cyber Leg)": {
+      "name": "Schermatura Rinforzata (Cybergamba)",
+      "description": "<p>L'arto e le opzioni installate non sono influenzate dagli impulsi EMPe programmi, salvo i Black ICE. </p>",
+      "dvTable": ""
+    },
+    "Hidden Holster": {
+      "name": "Fondina Nascosta",
+      "description": "<p>A holster that is concealed inside you without a check.</p>\n<blockquote><p>Can only conceal a normally concealable weapon.</p></blockquote>\n",
+      "dvTable": ""
+    },
+    "Homing Tracer": {
+      "name": "Localizzatore",
+      "description": "<p>\n  Provides audio tracking of a paired\n  @UUID[Compendium.cyberpunk-red-core.core_gear.Item.IqXTqNGBmSuigIWv]{Tracer Button}\n  up to 1 mile.\n</p>\n<blockquote><p>Replacements not included.</p></blockquote>\n",
+      "dvTable": ""
+    },
+    "Image Enhance": {
+      "name": "Definitore d’Immagine",
+      "description": "<p>\n  Provides +2 <strong>Perception</strong>, <strong>Lip Reading</strong>, and\n  <strong>Conceal/Reveal Object</strong> when using sight.\n</p>\n<p>Cyberware must be paired to provide associated benefit.</p>\n",
+      "dvTable": ""
+    },
+    "Implanted Linear Frame β (Beta)": {
+      "name": "Telaio Lineare ß (Beta) Esoscheletro Impiantato",
+      "description": "<p>Increases your <strong>BODY</strong> stat to 14</p>\n<p>\n  An Internal Linear Frame can be identified with a\n  [[/r 1d10red+@stats.tech+@skills.cybertech #DV13 Cybertech]]{DV13 Cybertech}\n  check.\n</p>\n<blockquote>\n  <p>\n    Requires\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.Lx9FSNDEIxLZ7Pyh]{Grafted Muscle and Bone Lace}\n    x2 (Installed Separately) &amp; <strong>BODY</strong> 8\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Implanted Linear Frame ∑ (Sigma)": {
+      "name": "Telaio Lineare Σ (Sigma) Esoscheletro Impiantato",
+      "description": "<p>Increases your <strong>BODY</strong> stat to 12</p>\n<p>\n  An Internal Linear Frame can be identified with a\n  [[/r 1d10red+@stats.tech+@skills.cybertech #DV13 Cybertech]]{DV13 Cybertech}\n  check.\n</p>\n<blockquote>\n  <p>\n    Requires\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.Lx9FSNDEIxLZ7Pyh]{Grafted Muscle and Bone Lace}\n    x1 (Installed Separately) &amp; <strong>BODY</strong> 6\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Independent Air Supply": {
+      "name": "Riserva d’Aria Indipendente",
+      "description": "<p>30 minuti di aria respirabile ricaricabile dall'atmosfera (1 ora). </p>",
+      "dvTable": ""
+    },
+    "Interface Plugs": {
+      "name": "Connettore d’Interfaccia",
+      "description": "<p>Spinotti al polso o alla testa per permetterti di connetterti a macchine/sistemi senza mani (Cyberdeck, ecc...)</p>",
+      "dvTable": ""
+    },
+    "Internal Agent": {
+      "name": "Agent Interno",
+      "description": "<p>\n  Built in\n  @UUID[Compendium.cyberpunk-red-core.core_gear.Item.GqYz689ddSKQHMen]{agent}.\n  Audio only but can be linked with other cybergear.\n</p>\n",
+      "dvTable": ""
+    },
+    "Jump Booster": {
+      "name": "Jump Booster",
+      "description": "<p>Built-in hydraulics negates penalty for jumping.</p>\n<blockquote>\n  <p>Cyberware must be paired to provide associated benefit.</p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Kerenzikov": {
+      "name": "Kerenzikov",
+      "description": "<p>Speedware that grants a permanent +2 to <strong>Initiative</strong>.</p>\n",
+      "dvTable": ""
+    },
+    "Level Damper": {
+      "name": "Antiassordante",
+      "description": "<p>\n  Provides immunity to deafness or sudden loud noises like those produced by\n  @UUID[Compendium.cyberpunk-red-core.core_ammo.Item.e8gDMbdK1oPKwhqW]{Grenade (Flashbang)}\n</p>\n",
+      "dvTable": ""
+    },
+    "Light Tattoo": {
+      "name": "Tatuaggio Luminoso",
+      "description": "<p>\n  Glowing tattoos. +2 to <strong>Wardrobe &amp; Style</strong> if you have at\n  least three installed.\n</p>\n<blockquote>\n  <p>Requires manual action to enable/disable the provided Active Effects</p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Low Light/IR/UV": {
+      "name": "Bassa Luminosità/Infrarosso/UV",
+      "description": "<p>Ignore any vision penalties due to lighting or fog/smoke.</p>\n<blockquote>\n  <p>Cyberware must be paired to provide associated benefit.</p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Meat Arm": {
+      "name": "Braccio Di Carne",
+      "description": "<p>A normal organic arm.</p>\n<blockquote>\n  <p>\n    Can support attachments like a\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.BUKAOysOkAkwaRqo]{Standard Hand}\n    or other weapons &amp; tools that can be installed into a meat arm.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Meat Foot": {
+      "name": "Meat Foot",
+      "description": "<p>Looks like a normal foot for the most part.</p>\n",
+      "dvTable": ""
+    },
+    "Meat Hand": {
+      "name": "Meat Hand",
+      "description": "<p>Looks like a normal hand for the most part.</p>\n",
+      "dvTable": ""
+    },
+    "Meat Leg": {
+      "name": "Gamba Di Carne",
+      "description": "<p>A normal organic leg.</p>\n<blockquote>\n  <p>\n    Can support attachments like a\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.W7S33SRvtrZUpceP]{Standard Foot}\n    or other weapons &amp; tools that can be installed into a meat leg.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Medical Grade Cyberarm": {
+      "name": "Cyberbraccio Medico",
+      "description": "<p>A medical grade cyberarm with no room for upgrades.</p>\n",
+      "dvTable": ""
+    },
+    "Medical Grade Cyberleg": {
+      "name": "Cybergamba Medica",
+      "description": "<p>A medical grade cyberleg with no room for upgrades.</p>\n",
+      "dvTable": ""
+    },
+    "Medscanner": {
+      "name": "Medscanner",
+      "description": "<p>\n  Built-in\n  @UUID[Compendium.cyberpunk-red-core.core_gear.Item.xW4PlIcWJ82QSfSh]{Medscanner}\n  which allows for quick assessment of injuries. Provides +2 to\n  <strong>First Aid</strong> and <strong>Paramedic</strong> skill checks.\n</p>\n",
+      "dvTable": ""
+    },
+    "Memory Chip": {
+      "name": "Chip di memoria",
+      "description": "<p>Data Storage. Like a flash drive for your brain. Eject safely.</p>\n<blockquote>\n  <p>\n    Chipware must be installed into a\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.IJarQGKk5rPayoLT]{Chipware Socket}\n    or similar device.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "MicroOptics": {
+      "name": "MicroOttica",
+      "description": "<p>Fornisce fino a 400x ingrandimento.</p>",
+      "dvTable": ""
+    },
+    "MicroVideo": {
+      "name": "MicroVideo",
+      "description": "<p>\n  Record first person video with a\n  @UUID[Compendium.cyberpunk-red-core.core_gear.Item.clCxd7qkp2olsKii]{camera}\n  installed into your eye. Videos can be saved onto a\n  @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.gAfBLrpJzkKVtr8o]{Memory Chip}\n  or linked\n  @UUID[Compendium.cyberpunk-red-core.core_gear.Item.GqYz689ddSKQHMen]{Agent}.\n</p>\n",
+      "dvTable": ""
+    },
+    "Midnight Lady Sexual Implant": {
+      "name": "Impianto Sessuale Mezzanotte Lady",
+      "description": "<p>Lavabile in lavatrice.</p>",
+      "dvTable": ""
+    },
+    "Mr. Studd Sexual Implant": {
+      "name": "Impianto Sessuale Mr. Studd ",
+      "description": "<p>Sono pronto quando lo sei tu.</p>",
+      "dvTable": ""
+    },
+    "MultiOptic Mount": {
+      "name": "Innesto MultiOttico",
+      "description": "<p>Allows you to install up to 5 additional eyes.</p>\n<blockquote>\n  <p>\n    Additional\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.aC234RUXPPUb08cO]{Cybereyes}\n    are sold &amp; installed separately. — Do not install your extra cybereyes\n    into this item.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Nasal Filters": {
+      "name": "Filtri Nasali",
+      "description": "<p>\n  Provides immunity to inhalable gases or fumes like those produced by\n  @UUID[Compendium.cyberpunk-red-core.core_ammo.Item.3rtsVDMaB16lc5tY]{Teargas Grenades}.\n</p>\n",
+      "dvTable": ""
+    },
+    "Neural Link": {
+      "name": "Collegamento Neurale",
+      "description": "<p>Provides root access to your nervous system.</p>\n",
+      "dvTable": ""
+    },
+    "Olfactory Boost": {
+      "name": "Amplificatore Olfattivo",
+      "description": "<p>A boosted sense of smell that allows scent tracking.</p>\n<blockquote>\n  <p>\n    Chipware must be installed into a\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.IJarQGKk5rPayoLT]{Chipware Socket}\n    or similar device.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Pain Editor": {
+      "name": "Antidolorifico",
+      "description": "<p>Removes <strong>Seriously Wounded</strong> penalties.</p>\n<blockquote>\n  <p>\n    Chipware must be installed into a\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.IJarQGKk5rPayoLT]{Chipware Socket}\n    or similar device.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Plastic Covering (Cyber Arm)": {
+      "name": "Copertura Plastica (Cyberbraccio)",
+      "description": "<p>Rivestimento in plastica in vari colori e motivi per il braccio. </p>",
+      "dvTable": ""
+    },
+    "Plastic Covering (Cyber Leg)": {
+      "name": "Copertura Plastica (Cybergamba)",
+      "description": "<p>Rivestimento in plastica in vari colori e motivi per la gamba. </p>",
+      "dvTable": ""
+    },
+    "Popup Grenade Launcher": {
+      "name": "Lanciagranate Popup",
+      "description": "<p>\n  A concealable one-shot\n  @UUID[Compendium.cyberpunk-red-core.core_weapons.Item.KgqUdz9Fs55747gv]{Grenade Launcher}.\n</p>\n<blockquote>\n  <p>Can't hold anything with this hand while activated.</p>\n  <p>\n    Incompatible with all upgrades except\n    @UUID[Compendium.cyberpunk-red-core.core_upgrades.Item.BC8S1sdK0QGdyHNC]{Smartgun Link}.\n  </p>\n</blockquote>\n",
+      "dvTable": "VD Lanciagranate"
+    },
+    "Popup Melee Weapon": {
+      "name": "Arma da Mischia Popup",
+      "description": "<p>A concealable One-Handed Melee Weapon.</p>\n<blockquote>\n  <p>Can't hold anything with this hand while activated.</p>\n  <p>Requires manual configuration to match the weapon being installed.</p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Popup Ranged Weapon": {
+      "name": "Arma a Distanza Popup",
+      "description": "<p>A concealable One-Handed Ranged Weapon.</p>\n<blockquote>\n  <p>Can't hold anything with this hand while activated.</p>\n  <p>Requires manual configuration to match the weapon being installed.</p>\n</blockquote>\n",
+      "dvTable": "DV Pistol"
+    },
+    "Popup Shield": {
+      "name": "Scudo Popup",
+      "description": "<p>A foldable shield that can be drawn or concealed easily.</p>\n<blockquote>\n  <p>Can't hold anything with this hand while activated.</p>\n  <p>\n    Add a\n    @UUID[Compendium.cyberpunk-red-core.core_armor.Item.Bg1YEeF25HhfrzOG]{Bullet Proof Shield}\n    to inventory to manage shield HP.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Quick Change Mount": {
+      "name": "Innesto Cambio\nRapido",
+      "description": "<p>\n  Your\n  @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.RT4NU0EbvmkgoSpZ]{cyberarm}\n  can be detached, re-attached, or swapped using your open socket. Keep an arm\n  for every occasion.\n</p>\n",
+      "dvTable": ""
+    },
+    "Radar Detector": {
+      "name": "Rivelatore Radar",
+      "description": "<p>Notifies the user when it detects a radar signal within a 100m/yd radius.</p>\n",
+      "dvTable": ""
+    },
+    "Radar/Sonar Implant": {
+      "name": "Impianto Radar / Sonar",
+      "description": "<p>\n  Scans the surrounding terrain in a 50m/yd radius around you. Works underwater,\n  but not through cover.\n</p>\n",
+      "dvTable": ""
+    },
+    "Radiation Detector": {
+      "name": "Rilevatore di Radiazioni",
+      "description": "<p>Shows radiation as a blue glow. Maximum range 100m/yds.</p>\n",
+      "dvTable": ""
+    },
+    "Radio Communicator": {
+      "name": "Comunicatore Radio",
+      "description": "<p>Walkie-talkie integrato. 1,6km di raggio.</p>",
+      "dvTable": ""
+    },
+    "Radio Scanner/Music Player": {
+      "name": "Radio/Lettore Musicale",
+      "description": "<p>\n  Tune into CitiNet radio stations or play music saved locally on a\n  @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.gAfBLrpJzkKVtr8o]{Memory Chip}.\n</p>\n",
+      "dvTable": ""
+    },
+    "Realskinn Covering (Cyber Arm)": {
+      "name": "Copertura Realskinn (Cyberarto)",
+      "description": "<p>An artificial skin type for your arm.</p>\n",
+      "dvTable": ""
+    },
+    "Realskinn Covering (Cyber Leg)": {
+      "name": "Copertura Realskinn (Cybergamba)",
+      "description": "<p>An artificial skin type for your leg.</p>\n",
+      "dvTable": ""
+    },
+    "Rippers": {
+      "name": "Digitolame",
+      "description": "<p>\n  Medium melee weapons concealed in your fingernails. Can be concealed without a\n  check.\n</p>\n<blockquote>\n  <p>You are unable to hold anything in this hand while activated.</p>\n  <p>\n    Can be installed into your\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.WzgaetvvHUQeD19B]{Meat Arm}\n    as the only piece of cyberware.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Sandevistan": {
+      "name": "Sandevistan",
+      "description": "<p>Speedware that provides +3 to <strong>Initiative</strong> for 1 min.</p>\n<blockquote><p>Requires a 1hr cooldown between uses.</p></blockquote>\n",
+      "dvTable": ""
+    },
+    "Scrambler/Descrambler": {
+      "name": "Codificatore/Decodificatore",
+      "description": "<p>Encodes and decodes any transmissions you send or receive.</p>\n",
+      "dvTable": ""
+    },
+    "Scratchers": {
+      "name": "Scorticatori",
+      "description": "<p>\n  Light melee weapons concealed in your fingernails. Can be concealed without a\n  check.\n</p>\n<blockquote>\n  <p>You are unable to hold anything in this hand while activated.</p>\n  <p>\n    Can be installed into your\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.WzgaetvvHUQeD19B]{Meat Arm}\n    as the only piece of cyberware.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Sensor Array": {
+      "name": "Modulo Sensori",
+      "description": "<p>Allows you to install up to 5 additional cyberaudio options.</p>\n<blockquote>\n  <p>\n    Manually adjust your\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.hsoSD662cLKvHKZJ]{Cyberaudio Suite}'s\n    number of slots to 8.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Shift Tacts": {
+      "name": "Mutalenti",
+      "description": "<p>Cambia il colore degli occhi. Può essere attivato/disattivato a piacimento. </p>",
+      "dvTable": ""
+    },
+    "Shoulder Cam": {
+      "name": "Videocamera",
+      "description": "<p>\n  A concealable camera that pops out of your shoulder. Footage can be stored on\n  a\n  @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.gAfBLrpJzkKVtr8o]{Memory Chip}\n  or linked\n  @UUID[Compendium.cyberpunk-red-core.core_gear.Item.GqYz689ddSKQHMen]{Agent}.\n</p>\n",
+      "dvTable": ""
+    },
+    "Skate Foot": {
+      "name": "Piede Pattino",
+      "description": "<p>While running your movement is increased by 6m/yds.</p>\n<blockquote>\n  <p>Cyberware must be paired to provide associated benefit.</p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Skill Chip": {
+      "name": "Chip Abilità",
+      "description": "<p>\n  Provides a value of <strong>3</strong> to a specific\n  <strong>skill</strong> while installed (provides no effect if the skill is\n  already 3+).\n</p>\n<blockquote>\n  <p>\n    Chipware must be installed into a\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.IJarQGKk5rPayoLT]{Chipware Socket}\n    or similar device.\n  </p>\n  <p>Requires manual AE creation.</p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Skin Weave": {
+      "name": "Skin Weave",
+      "description": "<p>Reinforced mesh embedded into your skin that can slowly repair itself.</p>\n<blockquote>\n  <p>\n    Add\n    @UUID[Compendium.cyberpunk-red-core.core_armor.Item.DXavZyl7CTtgoZ6i]{Skin Weave}\n    to track SP\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Skinwatch": {
+      "name": "Orologio Dermale",
+      "description": "<p>An LED display that shows the time and date through your skin.</p>\n",
+      "dvTable": ""
+    },
+    "Slice 'N Dice": {
+      "name": "Rasoio Monofilare",
+      "description": "<p>\n  Monofilament wiring that can be used as a Medium Melee Weapon. Can be\n  concealed without a check.\n</p>\n<blockquote>\n  <p>You are unable to hold anything in this hand while activated.</p>\n  <p>\n    Can be installed into your\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.WzgaetvvHUQeD19B]{Meat Arm}\n    as the only piece of cyberware.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Standard Foot": {
+      "name": "Piede Standard",
+      "description": "<p>A normal cybernetic foot.</p>\n",
+      "dvTable": ""
+    },
+    "Standard Hand": {
+      "name": "Mano Standard",
+      "description": "<p>A normal cybernetic hand.</p>\n",
+      "dvTable": ""
+    },
+    "Subdermal Armor": {
+      "name": "Armatura Subdermale",
+      "description": "<p>Reinforced mesh embedded beneath your skin that can slowly repair itself.</p>\n<blockquote>\n  <p>\n    Add\n    @UUID[Compendium.cyberpunk-red-core.core_armor.Item.M96Dfx18YqvhlIgb]{Subdermal Armor}\n    to track SP\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Subdermal Grip": {
+      "name": "Presa Sottocutanea",
+      "description": "<p>Plating on your hand which allows you to utilize Smartguns.</p>\n<blockquote>\n  <p>\n    Requires a\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.ju5Rq9rOe2lpDKKl]{Neural Link}\n    to function.\n  </p>\n  <p>\n    Can be installed into your\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.WzgaetvvHUQeD19B]{Meat Arm}\n    as the only piece of cyberware.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Subdermal Pocket": {
+      "name": "Tasca Subdermale",
+      "description": "<p>Tasca sottopelle da 5x10 cm con zip in RealSkinn. Contenuto occultabile senza bisogno di Prove.</p>",
+      "dvTable": ""
+    },
+    "Superchrome® Covering (Cyber Arm)": {
+      "name": "Superchrome® Covering (Cyber Arm)",
+      "description": "<p>\n  A metallic coating for your arm. Provides +2 to\n  <strong>Wardrobe and Style</strong>.\n</p>\n<blockquote><p>Effects do not stack</p></blockquote>\n",
+      "dvTable": ""
+    },
+    "Superchrome® Covering (Cyber Leg)": {
+      "name": "Superchrome® Covering (Cyber Leg)",
+      "description": "<p>\n  A metallic coating for your leg. Provides +2 to\n  <strong>Wardrobe and Style</strong>.\n</p>\n<blockquote><p>Effects do not stack</p></blockquote>\n",
+      "dvTable": ""
+    },
+    "Tactile Boost": {
+      "name": "Amplificatore Tattile",
+      "description": "<p>Can detect motion up to 20m/yd away through surface vibrations.</p>\n<blockquote>\n  <p>\n    Chipware must be installed into a\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.IJarQGKk5rPayoLT]{Chipware Socket}\n    or similar device.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Talon Foot": {
+      "name": "Piede Artigliato",
+      "description": "<p>A retractable blade in your foot.</p>\n<blockquote>\n  <p>\n    Can be installed into your\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.gDN0U6mp3axrm9KQ]{Meat Leg}\n    as the only piece of cyberware.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Targeting Scope": {
+      "name": "Mirino",
+      "description": "<p>Provides a +1 to <strong>aimed shots</strong>.</p>\n<blockquote>\n  <p>Effects of multiple targeting scopes do not stack.</p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Techhair": {
+      "name": "Tecnocapelli",
+      "description": "<p>Light-up color-changing artificial hair.</p>\n<blockquote>\n  <p>\n    +2 <strong>Personal Grooming</strong> when installed with\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.6jicmuwJKrB98O1R]{Chemskin}.\n    Effects do not stack.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Techscanner": {
+      "name": "Tecnoscanner",
+      "description": "<p>Analizza diversi tipi di macchinari e dispositivi elettronici, assiste in riparazioni e in altri lavori. Fornisce un bonus +2 per più controlli di abilità come Cybertecnologia, Elettronica e Sicurezza, Tecnologia degli Aeromobili, Tecnologia dei Veicoli Terrestri, Tecnologia delle Armi, Tecnologia delle Imbarcazioni e Tecnologia di Base. </p>",
+      "dvTable": ""
+    },
+    "TeleOptics": {
+      "name": "TeleOttica",
+      "description": "<p>\n  Telescope in your eye that can see up to 800m/yds and provides a +1 bonus to\n  <strong>ranged attacks</strong> from greater than 50m/yds away.\n</p>\n",
+      "dvTable": ""
+    },
+    "Tool Hand": {
+      "name": "Mano Attrezzo",
+      "description": "<p>Each finger in your hand has a different tool. Great for Techs!</p>\n<blockquote>\n  <p>\n    Can be installed into your\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.WzgaetvvHUQeD19B]{Meat Arm}\n    as the only piece of cyberware.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Toxin Binders": {
+      "name": "Filtro Antitossina",
+      "description": "<p>Provides +2 to <strong>Resist Torture/Drugs</strong> checks.</p>\n",
+      "dvTable": ""
+    },
+    "Vampyres": {
+      "name": "Zanne Vampiriche",
+      "description": "<p>\n  Razor sharp teeth that can conceal and administer a single dose of drugs or\n  poison.\n</p>\n",
+      "dvTable": ""
+    },
+    "Virtuality": {
+      "name": "Virtuality",
+      "description": "<p>\n  Built-in\n  @UUID[Compendium.cyberpunk-red-core.core_gear.Item.ECoCsPyfIEBCSggM]{virtuality goggles}.\n</p>\n<blockquote>\n  <p>Cyberware must be paired to provide associated benefit.</p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Voice Stress Analyzer": {
+      "name": "Analizzatore di Stress",
+      "description": "<p>\n  Provides +2 to <strong>Human Perception</strong> and\n  <strong>Interrogation</strong> checks.\n</p>\n",
+      "dvTable": ""
+    },
+    "Web Foot": {
+      "name": "Piede Palmato",
+      "description": "<p>Webbing between your toes allows you to swim.</p>\n<blockquote>\n  <p>Cyberware must be paired to provide associated benefit.</p>\n</blockquote>\n",
+      "dvTable": ""
+    },
+    "Wolvers": {
+      "name": "Wolvers",
+      "description": "<p>\n  Heavy melee weapons which retract from between your knuckles. Can be concealed\n  without a check.\n</p>\n<blockquote>\n  <p>You are unable to hold anything in this hand while activated.</p>\n  <p>\n    Can be installed into your\n    @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.WzgaetvvHUQeD19B]{Meat Arm}\n    as the only piece of cyberware.\n  </p>\n</blockquote>\n",
+      "dvTable": ""
+    }
+  }
+}

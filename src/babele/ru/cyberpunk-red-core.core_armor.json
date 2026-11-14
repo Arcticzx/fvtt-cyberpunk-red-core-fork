@@ -1,0 +1,78 @@
+{
+  "label": "Броня",
+  "mapping": {},
+  "entries": {
+    "Bodyweight Suit": {
+      "name": "Комбинезон «Бодивейт»",
+      "description": "<p>An armored skinsuit popular with Netrunners.</p>\n<blockquote>\n  <p>Can store Cyberdeck and support Interface Plugs.</p>\n  <p>Adds one Hardware only Option Slot for the stored Cyberdeck.</p>\n</blockquote>\n"
+    },
+    "Bullet Proof Shield": {
+      "name": "Пулестойкий щит",
+      "description": "<blockquote><p>Requires a free arm to be effective.</p></blockquote>\n"
+    },
+    "Flak (Body)": {
+      "name": "Костюм сапёра",
+      "description": "<p>Metal plated armor to resist the most powerful hits.</p>\n"
+    },
+    "Flak (Head)": {
+      "name": "Шлем сапёра",
+      "description": "<p>Metal plated armor to resist the most powerful hits to your head.</p>\n"
+    },
+    "Heavy Armorjack (Body)": {
+      "name": "Тяжёлый бронекостюм",
+      "description": "<p>Heavier version of an Armorjack.</p>\n"
+    },
+    "Heavy Armorjack (Head)": {
+      "name": "Тяжёлый бронешлем",
+      "description": "<p>Heavier version of an Armorjack for your head.</p>\n"
+    },
+    "Kevlar® (Body)": {
+      "name": "Кевларовый жилет",
+      "description": "<p>Standard Kevlar clothing.</p>\n"
+    },
+    "Kevlar® (Head)": {
+      "name": "Кевларовый шлем",
+      "description": "<p>Standard Kevlar for your head.</p>\n"
+    },
+    "Leathers (Body)": {
+      "name": "Кожанка",
+      "description": "<p>Simple Leather armor.</p>\n"
+    },
+    "Leathers (Head)": {
+      "name": "Кожанный шлем",
+      "description": "<p>Простой кожанный шлем. Без штрафа от брони.</p>"
+    },
+    "Light Armorjack (Body)": {
+      "name": "Лёгкий бронекостюм",
+      "description": "<p>Light version of an Armorjack.</p>\n"
+    },
+    "Light Armorjack (Head)": {
+      "name": "Лёгкий бронешлем",
+      "description": "<p>Light version of an Armorjack for your head.</p>\n"
+    },
+    "Medium Armorjack (Body)": {
+      "name": "Средний бронекостюм",
+      "description": "<p>Medium version of an Armorjack.</p>\n"
+    },
+    "Medium Armorjack (Head)": {
+      "name": "Средний бронешлем",
+      "description": "<p>Medium version of an Armorjack for your head.</p>\n"
+    },
+    "Metalgear® (Body)": {
+      "name": "Металлическая броня",
+      "description": "<p>\n  Protect your body with the heaviest and most durable armor in circulation.\n</p>\n"
+    },
+    "Metalgear® (Head)": {
+      "name": "Металлический шлем",
+      "description": "<p>\n  Protect your head with the heaviest and most durable armor in circulation.\n</p>\n"
+    },
+    "Skin Weave": {
+      "name": "Вплетение в кожу",
+      "description": "<p>\n  Armor Item for tracking the SP of\n  @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.micrAI9oicghVbcG]{Skin Weave}\n  Cyberware.\n</p>\n<blockquote><p>Recovers 1SP per day</p></blockquote>\n"
+    },
+    "Subdermal Armor": {
+      "name": "Подкожная броня",
+      "description": "<p>\n  Armor Item for tracking the SP of\n  @UUID[Compendium.cyberpunk-red-core.core_cyberware.Item.O5GmxTYCrrs8uWAd]{Subdermal Armor}\n  Cyberware.\n</p>\n<blockquote><p>Recovers 1SP per day</p></blockquote>\n"
+    }
+  }
+}

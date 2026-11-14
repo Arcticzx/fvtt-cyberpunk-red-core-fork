@@ -1,0 +1,55 @@
+_id: OufLzsBG6w0CUp81
+_key: "!items!OufLzsBG6w0CUp81"
+effects: []
+flags:
+  cyberpunk-red-core:
+    _migration:
+      current: 42
+      previous: "41"
+folder: null
+img: systems/cyberpunk-red-core/icons/compendium/ammo/grenade_poison.svg
+name: Grenade (Poison)
+ownership:
+  default: 0
+sort: 0
+system:
+  ablationValue: 0
+  amount: 1
+  brand: ""
+  concealable:
+    concealable: true
+    isConcealed: false
+  description:
+    value: |
+      <p>
+        No immediate damage. Does not ablate armor. On a hit, the target rolls a
+        [[/r 1d10red+@stats.will+@skills.resistTortureOrDrugs #DV13 Resist Torture/Drugs]]{DV13 Resist Torture/Drugs}.
+        On a failure, the target takes [[/r 2d6dmg#Poison Damage]]{2d6 Damage}
+        directly.
+      </p>
+      <blockquote><p>Does not affect inorganic targets.</p></blockquote>
+  favorite: false
+  installLocation: mall
+  overrides:
+    autofire:
+      minimum: 3
+      mode: none
+      value: -1
+    crit:
+      bonus: 0
+      count: 0
+      override: true
+      threshold: 0
+    damage:
+      minimum: 1d6
+      mode: set
+      value: 2d6
+  price:
+    market: 100
+  size: 0
+  sources:
+    - book: Cyberpunk RED
+      page: 346
+  type: poison
+  variety: grenade
+type: ammo
